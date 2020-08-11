@@ -20,7 +20,7 @@ A checklist to fill out every time making a pull request
 
 - [ ] **L**SP is being followed (Liskov Substitution Principle) Child classes should never break the parent class' type definitions.
 
-- [ ] **I**SP is being followed (Interface Segregation Principle) Interfaces belong to their clients and not to the implementations. No client should be forced to depend on methods it does not use.
+- [ ] **I**SP is being followed (Interface Segregation Principle) Interfaces belong to their clients and not to the implementations. No client should be forced to depend on methods it does not use. Create a new streamlined interface for the client and an AdapterClass which implements it and stores the implementation of the dependency which implements the heavy external interface.
 
 - [ ] **D**IP is being followed (Dependency Inversion Principle) Depend on Interfaces not concrete implementations.
 <br>
