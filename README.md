@@ -14,15 +14,17 @@ A checklist to fill out every time making a pull request
 
 - [ ] Guard Clauses are being used (Using a fast return when have something to assert in the beginning of a method)
 
-- [ ] **S**RP is being followed (Single Responsibility Principle) Software entities have a single responsibility / function and that is entirely encapsulated.
+- [ ] **S**RP is being followed (Single Responsibility Principle) A **class has** one and only **one reason to change**, meaning that a class has only one job.
 
-- [ ] **O**CP is being followed (Open/Closed Principle) Software entities should be open for extension, but closed for modification.
+- [ ] **O**CP is being followed (Open/Closed Principle) A software entity must be easily **extensible** with new features **without modifing existing code**.
 
-- [ ] **L**SP is being followed (Liskov Substitution Principle) Child classes should never break the parent class' type definitions.
+- [ ] **L**SP is being followed (Liskov Substitution Principle) **Objects are replaceable by** instances of **their subtypes** without altering the correct functioning of our system.
 
-- [ ] **I**SP is being followed (Interface Segregation Principle) Interfaces belong to their clients and not to the implementations. No client should be forced to depend on methods it does not use. Create a new streamlined interface for the client and an AdapterClass which implements it and stores the implementation of the dependency which implements the heavy external interface.
+- [ ] **I**SP is being followed (Interface Segregation Principle) **Interfaces belong to their clients** and not to the implementations. No client should be forced to depend on methods it does not use. Always **implement** atomic interfaces called **Role interfaces** to guarantee one specific related behavior by them. **In case of a third-party class create an AdapterClass and implement a new streamlined Interface** (or multiple Role interfaces)... **or** ... **create a Facade** by not Injecting the third party code rather creating a new instance in its constructor **and** also **implement a new streamlined Interface** (or multiple Role interfaces).
 
 - [ ] **D**IP is being followed (Dependency Inversion Principle) Depend on Interfaces not concrete implementations.
+
+- [ ] Not implementing interfaces by classes unique to the application: which has a state about the app (i.e. Entity) or has no reason to change (i.e. business logic, calculation)
 <br>
 
 - [ ] Code is self-documenting. All variables, methods and classes have self explaining names and describing complete functionality.
