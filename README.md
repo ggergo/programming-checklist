@@ -22,7 +22,7 @@ A checklist to fill out every time making a pull request
 
 - [ ] **I**SP is being followed (Interface Segregation Principle) **Interfaces belong to their clients** and not to the implementations. No client should be forced to depend on methods it does not use. Always **implement** atomic interfaces called **Role interfaces** to guarantee one specific related behavior by them. **In case of a third-party class create an AdapterClass and implement a new streamlined Interface** (or multiple Role interfaces)... **or** ... **create a Facade** by not Injecting the third party code rather creating a new instance in its constructor **and** also **implement a new streamlined Interface** (or multiple Role interfaces).
 
-- [ ] **D**IP is being followed (Dependency Inversion Principle) Depend on Interfaces not concrete implementations.
+- [ ] **D**IP is being followed (Dependency Inversion Principle) **Depend on Interfaces** not concrete implementations.
 
 - [ ] Not implementing interfaces by classes unique to the application: which has a state about the app (i.e. Entity) or has no reason to change (i.e. business logic, calculation)
 <br>
