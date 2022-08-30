@@ -14,7 +14,7 @@ A checklist to fill out every time making a pull request
 
 - [ ] Guard Clauses are being used (Using a fast return when have something to assert in the beginning of a method)
 
-- [ ] **S**RP is being followed (Single Responsibility Principle) A **class has** one and only **one reason to change**, meaning that a class has only one job.
+- [ ] **S**RP is being followed (Single Responsibility Principle) A **class has** one and only **one reason to change**, meaning that a class has only one job. Class methods do only one thing.
 
 - [ ] **O**CP is being followed (Open/Closed Principle) A software entity must be easily **extensible** with new features **without modifing existing code**.
 
@@ -25,6 +25,18 @@ A checklist to fill out every time making a pull request
 - [ ] **D**IP is being followed (Dependency Inversion Principle) **Depend on Interfaces** not concrete implementations.
 
 - [ ] Not implementing interfaces by classes unique to the application: which has a state about the app (i.e. Entity) or has no reason to change (i.e. business logic, calculation)
+<br>
+
+- [ ] Methods which has a return value are only returning a value and have no other side effect.
+- [ ] Void methods have side effects for a single responsibility.
+<br>
+
+- [ ] Try blocks are implemented in a separate method.
+- [ ] Try block containing methods has no code other than the try, catch, finally.
+- [ ] Try blocks contain only one line, like a single method call.
+- [ ] Try blocks are not nested.
+- [ ] Void try blocks contain a single method call to have a side effect for a single responsibility.
+- [ ] Try block methods with return value are returning from the single line method call inside the try block.
 <br>
 
 - [ ] Code is self-documenting. All variables, methods and classes have self explaining names and describing complete functionality.
@@ -42,11 +54,11 @@ Controller Action
   * handles a request and creates a response
   * creates forms as services, handles the form but does not check the handled form states
   * binds parameters for services i.e request parameters or i.e handled form or i.e a handled forms states
+  * builds a Command for a Command Bus
   * gets and sets session objects
   * redirects
  * ‘s Business Logic (BL)
-   * [ ] is in a separate BL class method
-   * [ ] ‘s method contains only the BL
+   * [ ] is in a separate BL class method i.e. in a Command Handler
    * [ ] is unittested
 <br>
 
